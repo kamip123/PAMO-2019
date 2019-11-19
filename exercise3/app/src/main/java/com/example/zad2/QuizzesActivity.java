@@ -53,6 +53,10 @@ public class QuizzesActivity extends AppCompatActivity {
                     intent = new Intent(getBaseContext(), QuizzesActivity.class);
                     startActivity(intent);
                     break;
+                case R.id.navigation_charts:
+                    intent = new Intent(getBaseContext(), ChartActivity.class);
+                    startActivity(intent);
+                    break;
             }
             return false;
         }
@@ -64,6 +68,8 @@ public class QuizzesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quizzes);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        MenuItem item = navView.getMenu().findItem(R.id.navigation_quizzes);
+        item.setChecked(true);
 
         quiz1ResultField = findViewById(R.id.quiz1Result);
         quiz2ResultField = findViewById(R.id.quiz2Result);

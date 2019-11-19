@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(getBaseContext(), QuizzesActivity.class);
                     startActivity(intent);
                     break;
+                case R.id.navigation_charts:
+                    intent = new Intent(getBaseContext(), ChartActivity.class);
+                    startActivity(intent);
+                    break;
             }
             return false;
         }

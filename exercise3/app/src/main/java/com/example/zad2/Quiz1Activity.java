@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,6 +52,10 @@ public class Quiz1Activity extends AppCompatActivity {
                     intent = new Intent(getBaseContext(), QuizzesActivity.class);
                     startActivity(intent);
                     break;
+                case R.id.navigation_charts:
+                    intent = new Intent(getBaseContext(), ChartActivity.class);
+                    startActivity(intent);
+                    break;
             }
             return false;
         }
@@ -62,14 +68,62 @@ public class Quiz1Activity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        MenuItem item = navView.getMenu().findItem(R.id.navigation_quizzes);
+        item.setChecked(true);
+
         submitButton = findViewById(R.id.submitButton);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Boolean emptyAnswer = false;
+                RadioGroup radioGroup = findViewById(R.id.radioGroupQuestion1);
+                if( radioGroup.getCheckedRadioButtonId() == -1)
+                {
+                    Toast.makeText(getApplicationContext(),"You have not answered question 1", Toast.LENGTH_LONG).show();
+                    emptyAnswer = true;
+                }
+
+                radioGroup = findViewById(R.id.radioGroupQuestion2);
+                if( radioGroup.getCheckedRadioButtonId() == -1)
+                {
+                    Toast.makeText(getApplicationContext(),"You have not answered question 2", Toast.LENGTH_LONG).show();
+                    emptyAnswer = true;
+                }
+
+                radioGroup = findViewById(R.id.radioGroupQuestion3);
+                if( radioGroup.getCheckedRadioButtonId() == -1)
+                {
+                    Toast.makeText(getApplicationContext(),"You have not answered question 3", Toast.LENGTH_LONG).show();
+                    emptyAnswer = true;
+                }
+
+                radioGroup = findViewById(R.id.radioGroupQuestion4);
+                if( radioGroup.getCheckedRadioButtonId() == -1)
+                {
+                    Toast.makeText(getApplicationContext(),"You have not answered question 4", Toast.LENGTH_LONG).show();
+                    emptyAnswer = true;
+                }
+
+                radioGroup = findViewById(R.id.radioGroupQuestion5);
+                if( radioGroup.getCheckedRadioButtonId() == -1)
+                {
+                    Toast.makeText(getApplicationContext(),"You have not answered question 5", Toast.LENGTH_LONG).show();
+                    emptyAnswer = true;
+                }
+
+                radioGroup = findViewById(R.id.radioGroupQuestion6);
+                if( radioGroup.getCheckedRadioButtonId() == -1)
+                {
+                    Toast.makeText(getApplicationContext(),"You have not answered question 6", Toast.LENGTH_LONG).show();
+                    emptyAnswer = true;
+                }
+
+                if (emptyAnswer) {
+                    return;
+                }
 
                 RadioButton rb;
-
                 rb = findViewById(R.id.radio11);
                 if (rb.isChecked()){
                     result+=1;

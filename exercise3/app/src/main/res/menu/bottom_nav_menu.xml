@@ -21,4 +21,9 @@
         android:icon="@android:drawable/radiobutton_on_background"
         android:title="@string/title_quizzes" />
 
+    <item
+        android:id="@+id/navigation_charts"
+        android:icon="@android:drawable/ic_menu_slideshow"
+        android:title="@string/title_charts" />
+
 </menu>
