@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_bmi">
+
+    <fragment
+        android:id="@+id/navigation_bmi"
+        android:name="com.example.exercise4.ui.bmi.BmiFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/activity_bmi" />
+
+    <fragment
+        android:id="@+id/navigation_ppm"
+        android:name="com.example.exercise4.ui.ppm.PpmFragment"
+        android:label="@string/title_ppm"
+        tools:layout="@layout/activity_ppm" />
+
+    <fragment
+        android:id="@+id/navigation_recommendations"
+        android:name="com.example.exercise4.ui.recommendations.RecommendationsFragment"
+        android:label="@string/title_recommendations"
+        tools:layout="@layout/activity_recommendations" />
+
+    <fragment
+        android:id="@+id/navigation_quizzes"
+        android:name="com.example.exercise4.ui.quizzes.QuizzesFragment"
+        android:label="@string/title_quizzes"
+        tools:layout="@layout/activity_quizzes" />
+
+    <fragment
+        android:id="@+id/navigation_charts"
+        android:name="com.example.exercise4.ui.charts.ChartsFragment"
+        android:label="@string/title_charts"
+        tools:layout="@layout/activity_charts" />
+</navigation>

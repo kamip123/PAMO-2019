@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Exercise4</string>
+    <string name="title_home">BMI</string>
+    <string name="title_ppm">PPM</string>
+    <string name="title_recommendations">Recommendations</string>
+    <string name="title_quizzes">Quizzes</string>
+    <string name="title_charts">Charts</string>
+</resources>
